@@ -124,6 +124,8 @@ button:hover {
   background-color: #b59f5b;
 }
 
+/* ========== HEADER ========== */
+
 .site-header {
   position: relative;
   width: 100%;
@@ -224,6 +226,8 @@ button:hover {
   line-height: 1.2;
 }
 
+/* ========== TRENDS ========== */
+
 .trends {
   width: 100%;
   margin-bottom: 61px;
@@ -320,6 +324,8 @@ button:hover {
 .trend-link:hover {
   color: #b59f5b;
 }
+
+/* ========== MAIN ========== */
 
 .main {
   position: relative;
@@ -419,6 +425,8 @@ button:hover {
   line-height: 1.5;
   color: #000000;
 }
+
+/* ========== ASIDE ========== */
 
 .aside {
   display: flex;
@@ -595,11 +603,14 @@ button:hover {
   margin-left: 10px;
 }
 
+/* SHOP */
+
 .shop {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 60px;
-  padding: 0 15px;
+  padding: 0 28px;
+  overflow: visible;
 }
 
 .shop-grid {
@@ -607,13 +618,14 @@ button:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 40px;
+  gap: 0;
   width: 100%;
+  justify-content: space-between;
 }
 
 .shop-card {
   position: relative;
-  flex: 1;
+  width: 295px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -626,41 +638,47 @@ button:hover {
   object-fit: cover;
   background-color: #f3f3f3;
   position: relative;
-  /* z-index: 1; */
   margin-bottom: 25px;
 }
 
 .shop-card-content {
- position: relative;
+  position: relative;
   z-index: 2;
   flex-grow: 1;
   border: 3px solid #b59f5b;
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-top: -50px;
-  padding: 25px 20px 25px;
+  margin-top: -45px;
+  margin-left: -28px;
+  margin-right: -28px;
+  padding: 25px 20px 20px;
   background-color: transparent;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 0;
+  column-gap: 4px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .shop-card-title {
-  width: 100%;
+  grid-column: 1 / -1;
   margin-bottom: 5px;
   font-size: 14px;
   color: #000000;
   text-align: left;
   text-transform: uppercase;
   overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .shop-card-desc {
-  width: 100%;
+  grid-column: 1 / -1;
   font-size: 14px;
   line-height: 1.5;
   color: #999999;
   margin-bottom: 24px;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .shop-card-link {
@@ -673,12 +691,13 @@ button:hover {
 }
 
 .shop-card-prices {
+  grid-column: 1;
+  grid-row: 3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
   margin-bottom: 0;
-  flex-grow: 1;
 }
 
 .price-old {
@@ -694,6 +713,9 @@ button:hover {
 }
 
 .shop-card-button {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -713,6 +735,8 @@ button:hover {
 .shop-card-button:hover {
   background-color: #323232;
 }
+
+/* ========== FEEDBACK MODAL ========== */
 
 .feedback-overlay {
   position: fixed;
@@ -740,7 +764,7 @@ button:hover {
   width: 100%;
 }
 
-/*Кнопка закрытия*/
+/* Кнопка закрытия */
 .feedback-close {
   position: absolute;
   top: -30px;
@@ -748,14 +772,14 @@ button:hover {
   background: none;
   border: none;
   font-size: 30px;
-  color:  #ffffff;
+  color: #ffffff;
   cursor: pointer;
   padding: 0;
-   line-height: 1;
+  line-height: 1;
 }
 
 .feedback-close:hover {
-  color: #b59f5b;;
+  color: #b59f5b;
   background: none;
 }
 
@@ -775,12 +799,11 @@ button:hover {
   background-color: #b59f5b;
 }
 
+/* исправила: убран font-weight: 700, font-size 14px вместо 12px */
 .feedback-form label {
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
-  font-weight: 700;
-  /* text-transform: uppercase; */
 }
 
 .feedback-form input[type="text"],
@@ -852,8 +875,8 @@ button:hover {
   cursor: pointer;
 }
 
- .feedback-radio-label input[type="radio"] {
- -webkit-appearance: none !important;
+.feedback-radio-label input[type="radio"] {
+  -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
   width: 18px;
@@ -886,6 +909,8 @@ button:hover {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+/* ===== FOOTER ===== */
 
 .footer {
   display: block;
@@ -958,6 +983,8 @@ button:hover {
   color: #b59f5b;
 }
 
+/* ===== ПЛАНШЕТ (max-width: 1200px) ===== */
+
 @media (max-width: 1200px) {
 
   .site-header {
@@ -980,7 +1007,6 @@ button:hover {
   .nav {
     display: none;
   }
-
   .trends-grid {
     flex-wrap: wrap;
   }
@@ -1030,17 +1056,18 @@ button:hover {
 
   .shop-grid {
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 126px;                 
   }
 
   .shop-card {
     flex: none;
-    width: calc(50% - 20px);
+    width: calc(50% - 63px);   
   }
 
   .shop-card-content {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -28px;         
+    margin-right: -28px;        
+    padding: 15px 20px;         
   }
 
   .social-section {
@@ -1059,6 +1086,8 @@ button:hover {
     min-height: 250px;
   }
 }
+
+/* ===== МОБИЛКА (max-width: 640px) ===== */
 
 @media (max-width: 640px) {
 
@@ -1180,10 +1209,14 @@ button:hover {
     margin-left: -15px;
     margin-right: -15px;
     margin-top: -45px;
-    padding: 20px 15px;
+    padding: 15px 15px;         
     background-color: transparent;
     position: relative;
     z-index: 2;
+  }
+
+  .shop-card-desc {
+    margin-bottom: 14px;       
   }
 
   .social-section {
